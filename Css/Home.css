@@ -1,0 +1,56 @@
+/* 
+=============
+IMPORTACIONES
+=============
+*/
+
+@import url('Base.css');
+
+/* 
+=========
+VARIABLES
+=========
+*/
+
+header#header-pagina {
+  --ruta-fondo-header: url('../Assets/Images/Home/Hero.jpg');
+}
+
+/* 
+===================
+HEADER: BANNER HERO
+===================
+*/
+
+header#header-pagina {
+  height: 100vh;
+  background-image: var(--ruta-fondo-header);
+}
+
+header#header-pagina div.banner h2.titulo-seccion {
+  margin-bottom: 1rem;
+  font-size: 5rem;
+  font-weight: 300;
+  text-transform: capitalize;
+}
+
+header#header-pagina div.banner p.tagline {
+  font-size: 2.2rem;
+  font-weight: 300;
+}
+
+header#header-pagina div.banner p.tagline strong {
+  font-weight: bolder;
+}
+
+header#header-pagina div.banner a.boton-hero {
+  margin-top: 3.5rem;
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+
+header#header-pagina div.banner a.boton-hero i {
+  display: inline-block;
+  margin-left: 0.25rem;
+  font-size: 1.3rem;
+}

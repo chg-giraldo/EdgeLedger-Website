@@ -1,0 +1,17 @@
+/* Open Sans Light */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-display: block;
+  src: url('OpenSans-Light.woff2') format('woff2');
+}
+
+/* Open Sans Regular */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url('OpenSans-Regular.woff2') format('woff2');
+}

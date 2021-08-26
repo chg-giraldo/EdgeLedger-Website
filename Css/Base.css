@@ -1,0 +1,249 @@
+/* 
+=============
+IMPORTACIONES
+=============
+*/
+
+@import url('../Assets/Fonts/GoogleFonts/OpenSans/OpenSans.css');
+@import url('../Assets/Fonts/FontAwesome/Main.css');
+
+/* 
+=============
+RESET ESTILOS
+=============
+*/
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  margin: 0px;
+  font-size: 1.6rem;
+}
+
+ul {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+}
+
+h1, h2 {
+  margin: 0px;
+  font-weight: normal;
+  line-height: 1em;
+}
+
+p {
+  margin: 0px;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+strong {
+  font-weight: normal;
+}
+
+em {
+  font-style: normal;
+}
+
+/* 
+=========
+VARIABLES
+=========
+*/
+
+html {
+
+  /* Dimensiones */
+  --ancho-area-activa: 1400px;
+  --altura-barra-superior: 70px;
+
+  /* Espaciado */
+  --padding-horizontal: 3rem;
+  --padding-vertical: 5rem;
+
+  /* Colores Identidad */
+  --color-principal: hsl(130, 60%, 40%);
+  --shade-principal-1: hsl(130, 70%, 32%);
+  --color-secundario: hsl(200, 90%, 40%);
+
+  /* Colores Nuetros */
+  --tint-neutro-1: hsl(0, 0%, 85%);
+  --shade-neutro-1: hsl(0, 0%, 20%);
+
+  /* Tipografía */
+  --fuenteCuerpo: 'Open Sans', 'Segoe UI', sans-serif;
+
+  /* Efectos */
+  --transicion-general: all 300ms linear;
+}
+
+/* 
+=================
+ESTILOS GENERALES
+=================
+*/
+
+body {
+  font-family: var(--fuenteCuerpo);
+  background-color: white;
+}
+
+main p {
+  color: var(--shade-neutro-1);
+  font-weight: 300;
+  line-height: 1.5em;
+}
+
+/* 
+=======================
+ELEMENTOS TRANSVERSALES
+=======================
+*/
+[class|='boton'] {
+  display: inline-block;
+  border-radius: 5px;
+  background-color: var(--color-principal);
+  padding: 1.25rem 3rem;
+  font-size: 1.3rem;
+  font-weight: 300;
+  text-transform: capitalize;
+  color: white;
+  transition: var(--transicion-general);
+  transition-property: background-color, color;
+}
+
+[class|='boton']:hover {
+  background-color: var(--shade-principal-1);
+}
+
+/* 
+==========
+ESTRUCTURA
+==========
+*/
+
+div.area-activa {
+  height: inherit;
+  max-width: var(--ancho-area-activa);
+  padding: 0px var(--padding-horizontal);
+  margin: 0px auto;
+}
+
+/* 
+===============
+HEADER: GENERAL
+===============
+*/
+
+header#header-pagina {
+  display: flex;
+  position: relative;
+  flex-flow: column nowrap;
+  background-size: cover;
+  background-position: center bottom;
+  background-attachment: fixed;
+}
+
+header#header-pagina::before {
+  display: block;
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: 0;
+  background-color: hsla(0, 0%, 0%, 60%);
+}
+
+/* 
+======================
+HEADER: BARRA SUPERIOR
+======================
+*/
+
+header#header-pagina div.barra-superior {
+  position: fixed;
+  width: 100%;
+  height: var(--altura-barra-superior);
+  top: 0px;
+  z-index: 2;
+  flex-grow: 0;
+  background-color: hsla(0, 0%, 20%, 85%);
+  color: var(--tint-neutro-1);
+}
+
+header#header-pagina div.barra-superior div.area-activa {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header#header-pagina div.barra-superior h1.logo {
+  display: inline-flex;
+  font-size: 2.4rem;
+  font-weight: 400;
+  align-items: baseline;
+}
+
+header#header-pagina div.barra-superior h1.logo em.enfasis-logo {
+  color: var(--shade-principal-1);
+}
+
+header#header-pagina nav.barra-navegacion ul {
+  display: flex;
+}
+
+header#header-pagina nav.barra-navegacion li {
+  margin-left: 1rem;
+}
+
+header#header-pagina nav.barra-navegacion a {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.5rem;
+  border-bottom: solid 2px transparent;
+  transition: var(--transicion-general);
+  transition-property: border-color;
+}
+
+header#header-pagina nav.barra-navegacion a:hover {
+  border-bottom-color: var(--shade-principal-1);
+}
+
+/* 
+===================
+HEADER: BANNER HERO
+===================
+*/
+
+header#header-pagina div.banner {
+  display: flex;
+  position: relative;
+  z-index: 1;
+  flex-grow: 1;
+  padding-top: var(--altura-barra-superior);
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+
+header#header-pagina div.banner div.contenido-banner {
+  text-align: center;
+  color: white;
+}
