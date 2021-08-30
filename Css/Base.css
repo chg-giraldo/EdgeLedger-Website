@@ -70,20 +70,25 @@ html {
 
   /* Dimensiones */
   --ancho-area-activa: 1400px;
-  --altura-barra-superior: 70px;
+  --altura-barra-superior: 60px;
 
   /* Espaciado */
   --padding-horizontal: 3rem;
   --padding-vertical: 5rem;
 
-  /* Colores Identidad */
+  /* Colores Principales */
   --color-principal: hsl(130, 60%, 40%);
-  --shade-principal-1: hsl(130, 70%, 32%);
-  --color-secundario: hsl(200, 90%, 40%);
+  --shade-principal-1: hsl(130, 70%, 30%);
 
-  /* Colores Nuetros */
+  /* Colores Secundarios */
+  --color-secundario: hsl(200, 80%, 40%);
+  --shade-secundario-1: hsl(200, 90%, 30%);
+
+  /* Colores Neutros */
   --tint-neutro-1: hsl(0, 0%, 85%);
+  --tint-neutro-2: hsl(0, 0%, 75%);
   --shade-neutro-1: hsl(0, 0%, 20%);
+  --shade-neutro-2: hsl(0, 0%, 30%);
 
   /* Tipografía */
   --fuenteCuerpo: 'Open Sans', 'Segoe UI', sans-serif;
@@ -114,21 +119,52 @@ main p {
 ELEMENTOS TRANSVERSALES
 =======================
 */
+
 [class|='boton'] {
   display: inline-block;
   border-radius: 5px;
-  background-color: var(--color-principal);
   padding: 1.25rem 3rem;
   font-size: 1.3rem;
   font-weight: 300;
   text-transform: capitalize;
-  color: white;
   transition: var(--transicion-general);
   transition-property: background-color, color;
 }
 
-[class|='boton']:hover {
+.boton-primario {
+  background-color: var(--color-principal);
+  color: white;
+}
+
+.boton-primario:hover {
   background-color: var(--shade-principal-1);
+}
+
+.boton-secundario {
+  background-color: var(--color-secundario);
+  color: white;
+}
+
+.boton-secundario:hover {
+  background-color: var(--shade-secundario-1);
+}
+
+.boton-claro {
+  background-color: var(--tint-neutro-1);
+  color: var(--shade-neutro-1);
+}
+
+.boton-claro:hover {
+  background-color: var(--shade-neutro-2);
+}
+
+.boton-oscuro {
+  background-color: var(--shade-neutro-1);
+  color: white;
+}
+
+.boton-oscuro:hover {
+  background-color: var(--shade-neutro-2);
 }
 
 /* 
@@ -184,8 +220,10 @@ header#header-pagina div.barra-superior {
   top: 0px;
   z-index: 2;
   flex-grow: 0;
-  background-color: hsla(0, 0%, 20%, 85%);
+  background-color: hsla(0, 0%, 20%, 80%);
   color: var(--tint-neutro-1);
+  transition: var(--transicion-general);
+  transition-property: background-color;
 }
 
 header#header-pagina div.barra-superior div.area-activa {

@@ -43,13 +43,13 @@ header#header-pagina div.banner p.tagline strong {
   font-weight: bolder;
 }
 
-header#header-pagina div.banner a.boton-hero {
+header#header-pagina div.banner a.boton-primario {
   margin-top: 3.5rem;
   font-size: 1.6rem;
   font-weight: 400;
 }
 
-header#header-pagina div.banner a.boton-hero i {
+header#header-pagina div.banner a.boton-primario i {
   display: inline-block;
   margin-left: 0.25rem;
   font-size: 1.3rem;
