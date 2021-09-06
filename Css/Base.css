@@ -32,13 +32,17 @@ ul {
   list-style-type: none;
 }
 
-h1, h2 {
+h1, h2, h3 {
   margin: 0px;
   font-weight: normal;
   line-height: 1em;
 }
 
 p {
+  margin: 0px;
+}
+
+figure {
   margin: 0px;
 }
 
@@ -50,6 +54,10 @@ img {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+button {
+  font-family: inherit;
 }
 
 strong {
@@ -71,22 +79,25 @@ html {
   /* Dimensiones */
   --ancho-area-activa: 1400px;
   --altura-barra-superior: 60px;
+  --ancho-boton: 140px;
 
   /* Espaciado */
   --padding-horizontal: 3rem;
   --padding-vertical: 5rem;
 
-  /* Colores Principales */
-  --color-principal: hsl(130, 60%, 40%);
-  --shade-principal-1: hsl(130, 70%, 30%);
+  /* Colores Primarios */
+  --color-primario: hsl(130, 60%, 40%);
+  --shade-primario-1: hsl(130, 70%, 30%);
+  --shade-primario-2: hsl(130, 80%, 20%);
 
   /* Colores Secundarios */
   --color-secundario: hsl(200, 80%, 40%);
   --shade-secundario-1: hsl(200, 90%, 30%);
 
   /* Colores Neutros */
-  --tint-neutro-1: hsl(0, 0%, 85%);
-  --tint-neutro-2: hsl(0, 0%, 75%);
+  --tint-neutro-1: hsl(0, 0%, 98%);
+  --tint-neutro-2: hsl(0, 0%, 85%);
+  --tint-neutro-3: hsl(0, 0%, 75%);
   --shade-neutro-1: hsl(0, 0%, 20%);
   --shade-neutro-2: hsl(0, 0%, 30%);
 
@@ -109,9 +120,10 @@ body {
 }
 
 main p {
-  color: var(--shade-neutro-1);
+  font-size: 1.5rem;
   font-weight: 300;
   line-height: 1.5em;
+  color: var(--shade-neutro-1);
 }
 
 /* 
@@ -122,22 +134,25 @@ ELEMENTOS TRANSVERSALES
 
 [class|='boton'] {
   display: inline-block;
+  width: var(--ancho-boton);
   border-radius: 5px;
-  padding: 1.25rem 3rem;
+  border: none;
+  padding: 1rem 0px;
   font-size: 1.3rem;
   font-weight: 300;
   text-transform: capitalize;
+  cursor: pointer;
   transition: var(--transicion-general);
   transition-property: background-color, color;
 }
 
 .boton-primario {
-  background-color: var(--color-principal);
+  background-color: var(--color-primario);
   color: white;
 }
 
 .boton-primario:hover {
-  background-color: var(--shade-principal-1);
+  background-color: var(--shade-primario-1);
 }
 
 .boton-secundario {
@@ -150,7 +165,7 @@ ELEMENTOS TRANSVERSALES
 }
 
 .boton-claro {
-  background-color: var(--tint-neutro-1);
+  background-color: var(--tint-neutro-2);
   color: var(--shade-neutro-1);
 }
 
@@ -221,7 +236,7 @@ header#header-pagina div.barra-superior {
   z-index: 2;
   flex-grow: 0;
   background-color: hsla(0, 0%, 20%, 80%);
-  color: var(--tint-neutro-1);
+  color: var(--tint-neutro-2);
   transition: var(--transicion-general);
   transition-property: background-color;
 }
@@ -241,7 +256,7 @@ header#header-pagina div.barra-superior h1.logo {
 }
 
 header#header-pagina div.barra-superior h1.logo em.enfasis-logo {
-  color: var(--shade-principal-1);
+  color: var(--shade-primario-1);
 }
 
 header#header-pagina nav.barra-navegacion ul {
@@ -249,20 +264,20 @@ header#header-pagina nav.barra-navegacion ul {
 }
 
 header#header-pagina nav.barra-navegacion li {
-  margin-left: 1rem;
+  margin-left: 2rem;
 }
 
 header#header-pagina nav.barra-navegacion a {
   display: inline-block;
-  padding: 0.75rem 1.5rem;
-  font-size: 1.5rem;
+  padding: 0.75rem 1rem;
+  font-size: 1.4rem;
   border-bottom: solid 2px transparent;
   transition: var(--transicion-general);
   transition-property: border-color;
 }
 
 header#header-pagina nav.barra-navegacion a:hover {
-  border-bottom-color: var(--shade-principal-1);
+  border-bottom-color: var(--shade-primario-1);
 }
 
 /* 

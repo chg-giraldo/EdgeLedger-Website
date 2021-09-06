@@ -44,7 +44,10 @@ header#header-pagina div.banner p.tagline strong {
 }
 
 header#header-pagina div.banner a.boton-primario {
+  width: calc(var(--ancho-boton) + 2rem);
   margin-top: 3.5rem;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
   font-size: 1.6rem;
   font-weight: 400;
 }
@@ -52,5 +55,142 @@ header#header-pagina div.banner a.boton-primario {
 header#header-pagina div.banner a.boton-primario i {
   display: inline-block;
   margin-left: 0.25rem;
-  font-size: 1.3rem;
+  font-size: 0.75em;
+}
+
+/* 
+=================
+SECCIÓN: FEATURES
+=================
+*/
+
+section#seccion-features {
+  background-color: var(--tint-neutro-1);
+}
+
+section#seccion-features div.galeria-features {
+  --gutter-galeria: 20px;
+  display: flex;
+  margin: 0px calc(-1*var(--gutter-galeria));
+  padding: var(--padding-vertical) 0px;
+  flex-flow: row wrap;
+}
+
+section#seccion-features div.galeria-features article {
+  flex-basis: calc(100%/3);
+  padding: 0px var(--gutter-galeria);
+  text-align: center;
+}
+
+section#seccion-features div.galeria-features article header {
+  margin-bottom: 2.5rem;
+}
+
+section#seccion-features div.galeria-features div.icono {
+  --diametro-icono: 6rem;
+  display: inline-flex;
+  width: var(--diametro-icono);
+  height: var(--diametro-icono);
+  border-radius: 50%;
+  margin-bottom: 1.5rem;
+  background-color: var(--color-primario);
+  justify-content: center;
+  align-items: center;
+}
+
+section#seccion-features div.galeria-features div.icono i {
+  font-size: 2.5rem;
+  color: white;
+}
+
+section#seccion-features div.galeria-features h3.titulo {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+section#seccion-features div.galeria-features p.descripcion {
+  font-size: 1.6rem;
+}
+
+/* 
+===================
+SECCIÓN: SOLUCIONES
+===================
+*/
+
+section#seccion-soluciones {
+  background-image: linear-gradient(to right, var(--shade-primario-2), var(--color-primario));
+}
+
+section#seccion-soluciones div.contenido-seccion {
+  display: flex;
+  align-items: stretch;
+}
+
+section#seccion-soluciones div.contenido-seccion > [class|='columna'] {
+  flex-basis: 50%;
+}
+
+section#seccion-soluciones figure.columna-fotografia img {
+  object-fit: cover;
+  height: 100%;
+}
+
+section#seccion-soluciones div.columna-informacion {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  padding: var(--padding-vertical) var(--padding-horizontal);
+}
+
+section#seccion-soluciones div.columna-informacion :is(p, button, h2, h3) {
+  color: white;
+}
+
+section#seccion-soluciones div.columna-informacion header {
+  margin-bottom: 3rem;
+}
+
+section#seccion-soluciones div.columna-informacion h3.frase-subtitulo {
+  margin-bottom: 1rem; 
+  font-size: 1.4rem;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+section#seccion-soluciones div.columna-informacion h2.titulo-seccion {
+  font-size: 3.6rem;
+  font-weight: 300;
+}
+
+section#seccion-soluciones div.columna-informacion p {
+  font-size: 1.5rem;
+}
+
+section#seccion-soluciones div.columna-informacion a.boton-primario {
+  display: flex;
+  width: var(--ancho-boton);
+  margin-top: 2rem;
+  border: solid 1px white;
+  background-color: transparent;
+  font-size: 1.4rem;
+  font-weight: 400;
+  justify-content: center;
+  align-items: center;
+}
+
+section#seccion-soluciones div.columna-informacion a.boton-primario i {
+  width: 0px;
+  margin-left: 0px;
+  opacity: 0;
+  font-size: 0.75em;
+  transition: var(--transicion-general);
+  transition-property: margin-left, opacity, width;
+}
+
+section#seccion-soluciones div.columna-informacion a.boton-primario:hover i {
+  display: inline-block;
+  margin-left: 0.75rem;
+  opacity: 1;
+  width: auto;
 }
