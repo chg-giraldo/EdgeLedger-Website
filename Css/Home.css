@@ -44,7 +44,7 @@ header#header-pagina div.banner p.tagline strong {
 }
 
 header#header-pagina div.banner a.boton-primario {
-  width: calc(var(--ancho-boton) + 2rem);
+  width: var(--ancho-boton-medio);
   margin-top: 3.5rem;
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
@@ -72,7 +72,7 @@ section#seccion-features div.galeria-features {
   --gutter-galeria: 20px;
   display: flex;
   margin: 0px calc(-1*var(--gutter-galeria));
-  padding: var(--padding-vertical) 0px;
+  padding: 6rem 0px;
   flex-flow: row wrap;
 }
 
@@ -119,78 +119,110 @@ SECCIÓN: SOLUCIONES
 */
 
 section#seccion-soluciones {
-  background-image: linear-gradient(to right, var(--shade-primario-2), var(--color-primario));
+  --colores-gradiente: var(--shade-primario-2), var(--color-primario);
 }
 
-section#seccion-soluciones div.contenido-seccion {
-  display: flex;
-  align-items: stretch;
-}
-
-section#seccion-soluciones div.contenido-seccion > [class|='columna'] {
-  flex-basis: 50%;
-}
-
-section#seccion-soluciones figure.columna-fotografia img {
-  object-fit: cover;
-  height: 100%;
+section#seccion-soluciones figure.columna-fotografia {
+  order: 1;
 }
 
 section#seccion-soluciones div.columna-informacion {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  padding: var(--padding-vertical) var(--padding-horizontal);
-}
-
-section#seccion-soluciones div.columna-informacion :is(p, button, h2, h3) {
-  color: white;
-}
-
-section#seccion-soluciones div.columna-informacion header {
-  margin-bottom: 3rem;
-}
-
-section#seccion-soluciones div.columna-informacion h3.frase-subtitulo {
-  margin-bottom: 1rem; 
-  font-size: 1.4rem;
-  font-weight: 300;
-  text-transform: uppercase;
+  order: 2;
 }
 
 section#seccion-soluciones div.columna-informacion h2.titulo-seccion {
-  font-size: 3.6rem;
-  font-weight: 300;
-}
-
-section#seccion-soluciones div.columna-informacion p {
-  font-size: 1.5rem;
+  text-transform: none;
 }
 
 section#seccion-soluciones div.columna-informacion a.boton-primario {
+  width: var(--ancho-boton-corto);
+}
+
+/* 
+=================
+SECCIÓN: NEGOCIOS
+=================
+*/
+
+section#seccion-negocios {
+  padding: var(--padding-vertical) 0px;
+}
+
+section#seccion-negocios header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+section#seccion-negocios header h2.titulo-seccion {
+  margin-bottom: 2rem;
+}
+
+section#seccion-negocios div.area-activa {
+  overflow-x: hidden;
+}
+
+section#seccion-negocios div.galeria-negocios {
+  --numero-columnas: 4;
+  --gutter-galeria: 0.4rem;
   display: flex;
-  width: var(--ancho-boton);
-  margin-top: 2rem;
-  border: solid 1px white;
-  background-color: transparent;
-  font-size: 1.4rem;
-  font-weight: 400;
-  justify-content: center;
-  align-items: center;
+  margin: 0px calc(-1 * var(--gutter-galeria));
+  flex-flow: row wrap;
 }
 
-section#seccion-soluciones div.columna-informacion a.boton-primario i {
-  width: 0px;
-  margin-left: 0px;
-  opacity: 0;
-  font-size: 0.75em;
-  transition: var(--transicion-general);
-  transition-property: margin-left, opacity, width;
+section#seccion-negocios div.galeria-negocios figure {
+  position: relative;
+  flex-basis: calc(100% / var(--numero-columnas));
+  aspect-ratio: 3 / 2;
+  margin-top: calc(2 * var(--gutter-galeria));
+  padding: 0px var(--gutter-galeria);
 }
 
-section#seccion-soluciones div.columna-informacion a.boton-primario:hover i {
+section#seccion-negocios div.galeria-negocios figure::after {
   display: inline-block;
-  margin-left: 0.75rem;
-  opacity: 1;
-  width: auto;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  content: '';
+  background-color: white;
+  opacity: 0;
+  transition: var(--transicion-general);
+  transition-property: opacity;
+}
+
+section#seccion-negocios div.galeria-negocios figure:hover {
+  cursor: pointer;
+}
+
+section#seccion-negocios div.galeria-negocios figure:hover::after {
+  opacity: 0.35;
+}
+
+section#seccion-negocios div.galeria-negocios img {
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* 
+===================
+SECCIÓN: SOLUCIONES
+===================
+*/
+
+section#seccion-blog {
+  --colores-gradiente: var(--shade-secundario-2), var(--color-secundario);
+}
+
+section#seccion-blog div.columna-informacion {
+  order: 1;
+}
+
+section#seccion-blog figure.columna-fotografia {
+  order: 2;
+}
+
+section#seccion-blog div.columna-informacion a.boton-primario {
+  width: var(--ancho-boton-medio);
 }
