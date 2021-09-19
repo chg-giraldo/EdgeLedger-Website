@@ -146,7 +146,7 @@
       <div class="area-activa">
 
       <!-- Header: Frase Subtítulo, Título Sección, Descripción Corta -->
-      <header>
+      <header class="header-estandar">
         <h3 class="subtitulo-seccion">This is what we do</h3>
         <h2 class="titulo-seccion">Business cases</h2>
         <div class="descripcion">
@@ -208,6 +208,131 @@
       </div>
     </section>
 
+    <!-- Sección Equipo -->
+    <section id="seccion-equipo">
+      <div class="area-activa">
+
+        <!-- Header: Frase Subtítulo, Título Sección, Descripción Corta -->
+        <header class="header-estandar">
+          <h3 class="subtitulo-seccion">Who we are</h3>
+          <h2 class="titulo-seccion">Our professional team</h2>
+          <div class="descripcion">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit id modi</p>
+          </div>
+        </header>
+
+        <!-- Galería Equipo: Fotografía, Nombre, Cargo Miembros -->
+        <div class="galeria-equipo">
+          
+          <!-- Miembro 1: President -->
+          <article class="miembro-equipo">
+            <figure class="fotografia sujeto-izquierda">
+              <img src="../Assets/Images/Team/Person1.jpg" alt="John Doe Picture" />
+            </figure>
+            <h4 class="nombre">John Doe</h4>
+            <p class="cargo">President</p>
+          </article>
+          
+          <!-- Miembro 2: Vice President -->
+          <article class="miembro-equipo">
+            <figure class="fotografia sujeto-derecha">
+              <img src="../Assets/Images/Team/Person2.jpg" alt="Jane Doe Picture" />
+            </figure>
+            <h4 class="nombre">Jane Doe</h4>
+            <p class="cargo">Vice President</p>
+          </article>
+          
+          <!-- Miembro 3: Marketing Head -->
+          <article class="miembro-equipo">
+            <figure class="fotografia sujeto-izquierda">
+              <img src="../Assets/Images/Team/Person3.jpg" alt="Jane Doe Picture" />
+            </figure>
+            <h4 class="nombre">Steve Smith</h4>
+            <p class="cargo">Marketing Head</p>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Sección: Formulario -->
+    <section id="seccion-formulario" class="seccion-estandar">
+      <div class="area-activa">
+        <div class="contenido-seccion">
+
+          <!-- Columna Fotografía -->
+          <figure class="columna-fotografia">
+            <img src="../Assets/Images/Home/Contact.jpg" alt="Man sitting using Cellphone and Laptop" />
+          </figure>
+
+          <!-- Columna Información: Formulario Contacto -->
+          <div class="columna-informacion">
+
+            <!-- Título Sección -->
+            <header>
+              <h2 class="titulo-seccion">Request callback</h2>
+            </header>
+
+            <!-- Formulario -->
+            <form class="formulario-contacto">
+
+              <!-- Cuerpo Formulario: Campos -->
+              <div class="cuerpo-formulario">
+
+                  <!-- Campo 1: Nombre -->
+                  <div class="grupo-formulario">
+                    <label for="campo-nombre">Name</label>
+                    <input id="campo-nombre" type="text" placeholder="John Doe" name="campoNombre" autofocus />
+                  </div>
+
+                  <!-- Campo 2: Email -->
+                  <div class="grupo-formulario">
+                    <label for="campo-email">Email</label>
+                    <input id="campo-email" type="email" placeholder="john.doe@mail.com" name="campoEmail" />
+                  </div>
+
+                  <!-- Campo 3: Email -->
+                  <div class="grupo-formulario">
+                    <label for="campo-telefono">Phone</label>
+                    <input id="campo-telefono" type="tel" placeholder="(333) 444 55 66" name="campoTelefono" />
+                </div>
+              </div>
+
+              <!-- Botón Enviar -->
+              <footer class="fila-boton">
+                <button class="boton-primario" type="submit">Submit</button>
+              </footer>
+
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
   </main>
+
+  <!-- Pie de Página -->
+  <footer id="footer-pagina">
+    <div class="area-activa">
+
+      <!-- Fila 1: Íconos Redes Sociales -->
+      <ul class="fila-iconos-redes">
+        <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+        <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+        <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+      </ul>
+
+      <!-- Fila 2: Información Copyright -->
+      <p class="fila-copyright">
+        <span>Copyright &copy; 2020</span>
+        <span> - </span>
+        <span>EdgeLedger</span>
+      </p>
+
+    </div>
+  </footer>
+
 </body>
 </html>

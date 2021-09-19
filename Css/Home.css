@@ -104,7 +104,7 @@ section#seccion-features div.galeria-features div.icono i {
 }
 
 section#seccion-features div.galeria-features h3.titulo {
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   font-weight: bold;
 }
 
@@ -146,15 +146,6 @@ SECCIÓN: NEGOCIOS
 
 section#seccion-negocios {
   padding: var(--padding-vertical) 0px;
-}
-
-section#seccion-negocios header {
-  text-align: center;
-  margin-bottom: 4rem;
-}
-
-section#seccion-negocios header h2.titulo-seccion {
-  margin-bottom: 2rem;
 }
 
 section#seccion-negocios div.area-activa {
@@ -225,4 +216,116 @@ section#seccion-blog figure.columna-fotografia {
 
 section#seccion-blog div.columna-informacion a.boton-primario {
   width: var(--ancho-boton-medio);
+}
+
+/*
+===============
+SECCIÓN: EQUIPO
+===============
+*/
+
+section#seccion-equipo {
+  padding: var(--padding-vertical) 0px;
+}
+
+section#seccion-equipo div.galeria-equipo {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+section#seccion-equipo article.miembro-equipo {
+  display: flex;
+  width: calc(100% / 3);
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+section#seccion-equipo article.miembro-equipo figure {
+  --altura-maxima: 320px;
+  --gutter-fotografias: 4rem;
+  width: calc(100% - var(--gutter-fotografias));
+  max-width: var(--altura-maxima);
+  aspect-ratio: 1 / 1;
+  max-height: var(--altura-maxima);
+  margin-bottom: 3rem;
+}
+
+section#seccion-equipo article.miembro-equipo figure img {
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+section#seccion-equipo article.miembro-equipo figure.sujeto-izquierda img {
+  object-position: 35% center;
+}
+
+section#seccion-equipo article.miembro-equipo figure.sujeto-derecha img {
+  object-position: 85% center;
+}
+
+section#seccion-equipo article.miembro-equipo h4.nombre {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-bottom: 0.35rem;
+}
+
+/* 
+==================
+SECCIÓN FORMULARIO
+==================
+*/
+
+section#seccion-formulario {
+  --colores-gradiente: var(--tint-neutro-1), var(--tint-neutro-2);
+}
+
+section#seccion-formulario div.columna-informacion {
+  --color-texto: var(--shade-neutro-1);
+}
+
+section#seccion-formulario form div.grupo-formulario:not(:first-of-type) {
+  margin-top: 1.5rem;
+}
+
+section#seccion-formulario form div.grupo-formulario {
+  display: flex;
+  align-items: baseline;
+}
+
+section#seccion-formulario form div.grupo-formulario label {
+  font-size: 1.3rem;
+  font-weight: 300;
+  width: 10ch;
+}
+
+section#seccion-formulario form div.grupo-formulario input {
+  width: auto;
+  flex-grow: 1;
+  border-radius: 2px;
+  padding: 1.25rem 1.5rem;
+  border-style: none;
+  font-size: 1.5rem;
+  outline: none 1px var(--shade-primario-1);
+}
+
+section#seccion-formulario form div.grupo-formulario input:focus {
+  outline-style: solid;
+}
+
+section#seccion-formulario form div.grupo-formulario input::placeholder {
+  font-size: 1.3rem;
+}
+
+section#seccion-formulario form.formulario-contacto footer.fila-boton {
+  margin-top: 2.5rem;
+}
+
+section#seccion-formulario form.formulario-contacto button.boton-primario {
+  width: 100%;
+  padding: 1.25rem 0px;
+  font-size: 1.4rem;
+  font-weight: normal;
+  letter-spacing: 0.03em;
+  color: white;
 }

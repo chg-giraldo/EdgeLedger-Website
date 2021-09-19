@@ -32,7 +32,7 @@ ul {
   list-style-type: none;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
   margin: 0px;
   font-weight: normal;
   line-height: 1em;
@@ -68,6 +68,10 @@ em {
   font-style: normal;
 }
 
+input {
+  font-family: inherit;
+}
+
 /* 
 =========
 VARIABLES
@@ -83,8 +87,8 @@ html {
   --ancho-boton-medio: 170px;
 
   /* Espaciado */
-  --padding-horizontal: 3rem;
-  --padding-vertical: 10rem;
+  --padding-horizontal: 5rem;
+  --padding-vertical: 12rem;
 
   /* Colores Primarios */
   --color-primario: hsl(130, 60%, 40%);
@@ -250,7 +254,7 @@ header#header-pagina div.barra-superior {
   top: 0px;
   z-index: 2;
   flex-grow: 0;
-  background-color: hsla(0, 0%, 20%, 80%);
+  background-color: hsla(0, 0%, 20%, 90%);
   color: var(--tint-neutro-2);
   transition: var(--transicion-general);
   transition-property: background-color;
@@ -361,7 +365,7 @@ section.seccion-estandar div.columna-informacion header {
   margin-bottom: 3rem;
 }
 
-section.seccion-estandar {
+section.seccion-estandar div.columna-informacion {
   font-size: 1.5rem;
 }
 
@@ -390,4 +394,61 @@ section.seccion-estandar div.columna-informacion a.boton-primario:hover i {
   margin-left: 0.75rem;
   opacity: 1;
   width: 1em;
+}
+
+/* 
+===============
+HEADER ESTÁNDAR
+===============
+*/
+
+section header.header-estandar {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+section header.header-estandar h2.titulo-seccion {
+  margin-bottom: 2rem;
+}
+
+/* 
+=============
+PIE DE PÁGINA
+=============
+*/
+
+footer#footer-pagina {
+  background-color: var(--shade-neutro-1);
+  padding: 5rem 0px;
+  color: white;
+}
+
+footer#footer-pagina ul.fila-iconos-redes {
+  display: flex;
+  margin-bottom: 0.75rem;
+  justify-content: center;
+  flex-flow: row wrap;
+}
+
+footer#footer-pagina ul.fila-iconos-redes li {
+  margin: 0px 1rem;
+}
+
+footer#footer-pagina ul.fila-iconos-redes li a:hover {
+  transition: var(--transicion-general);
+  transition-property: color;
+}
+
+footer#footer-pagina ul.fila-iconos-redes li a:hover {
+  color: var(--color-primario);
+}
+
+footer#footer-pagina ul.fila-iconos-redes li i {
+  font-size: 2.2rem;
+}
+
+footer#footer-pagina p.fila-copyright {
+  font-size: 1.4rem;
+  font-weight: 300;
+  text-align: center;
 }
