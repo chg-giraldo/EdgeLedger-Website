@@ -27,15 +27,18 @@ header#header-pagina {
   background-image: var(--ruta-fondo-header);
 }
 
+header#header-pagina div.contenido-banner {
+  padding: 0px var(--padding-horizontal);
+}
+
 header#header-pagina div.banner h2.titulo-seccion {
   margin-bottom: 1rem;
-  font-size: 5rem;
+  font-size: 4.4rem;
   font-weight: 300;
-  text-transform: capitalize;
 }
 
 header#header-pagina div.banner p.tagline {
-  font-size: 2.2rem;
+  font-size: 1.9rem;
   font-weight: 300;
 }
 
@@ -69,21 +72,16 @@ section#seccion-features {
 }
 
 section#seccion-features div.galeria-features {
-  --gutter-galeria: 20px;
   display: flex;
-  margin: 0px calc(-1*var(--gutter-galeria));
-  padding: 6rem 0px;
-  flex-flow: row wrap;
+  padding: 5rem 0px;
 }
 
 section#seccion-features div.galeria-features article {
-  flex-basis: calc(100%/3);
-  padding: 0px var(--gutter-galeria);
   text-align: center;
 }
 
 section#seccion-features div.galeria-features article header {
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
 }
 
 section#seccion-features div.galeria-features div.icono {
@@ -109,7 +107,59 @@ section#seccion-features div.galeria-features h3.titulo {
 }
 
 section#seccion-features div.galeria-features p.descripcion {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
+}
+
+/* 
+==============================
+MEDIA QUERIES SECCIÓN FEATURES
+==============================
+*/
+
+/* Break Points: A) 0px, B) 540px, C) 720px, D) 960px, E) 1200px */
+
+/* Rango AB: < 540px */
+@media (max-width: 539px) {
+  section#seccion-features div.galeria-features {
+    flex-flow: column nowrap;
+  }
+
+  section#seccion-features div.galeria-features article:not(:first-of-type) {
+    margin-top: 5rem;
+  }
+}
+
+/* Rango BZ: > 540px */
+@media (min-width: 540px) {
+  section#seccion-features div.galeria-features {
+    --gutter-galeria: 20px;
+    margin: 0px calc(-1*var(--gutter-galeria));
+    flex-flow: row wrap;
+  }
+
+  section#seccion-features div.galeria-features article {
+    flex-basis: calc(100% / var(--numero-columnas));
+    padding: 0px var(--gutter-galeria);
+  }
+}
+
+/* Rango BC: 540px - 720px */
+@media (min-width: 540px) and (max-width: 719px) {
+  section#seccion-features div.galeria-features {
+    --numero-columnas: 2;
+  }
+
+  section#seccion-features div.galeria-features article:last-of-type {
+    margin-top: 5rem;
+    flex-basis: 100%;
+  }
+}
+
+/* Rango DZ: > 720px */
+@media (min-width: 720px) {
+  section#seccion-features div.galeria-features {
+    --numero-columnas: 3;
+  }
 }
 
 /* 
@@ -148,24 +198,14 @@ section#seccion-negocios {
   padding: var(--padding-vertical) 0px;
 }
 
-section#seccion-negocios div.area-activa {
-  overflow-x: hidden;
-}
-
 section#seccion-negocios div.galeria-negocios {
-  --numero-columnas: 4;
-  --gutter-galeria: 0.4rem;
   display: flex;
-  margin: 0px calc(-1 * var(--gutter-galeria));
-  flex-flow: row wrap;
 }
 
 section#seccion-negocios div.galeria-negocios figure {
   position: relative;
-  flex-basis: calc(100% / var(--numero-columnas));
   aspect-ratio: 3 / 2;
   margin-top: calc(2 * var(--gutter-galeria));
-  padding: 0px var(--gutter-galeria);
 }
 
 section#seccion-negocios div.galeria-negocios figure::after {
@@ -194,28 +234,116 @@ section#seccion-negocios div.galeria-negocios img {
   height: 100%;
   object-fit: cover;
   object-position: center;
+  border-radius: 5px;
 }
 
 /* 
-===================
-SECCIÓN: SOLUCIONES
-===================
+================
+SECCIÓN NEGOCIOS
+================
+*/
+
+/* Break Points: A) 0px, B) 540px, C) 720px, D) 960px, E) 1200px */
+
+/* Rango AB: < 540px */
+@media (max-width: 539px) {
+  section#seccion-negocios div.galeria-negocios {
+    --gutter-galeria: 1rem;
+    flex-flow: column nowrap;
+  }
+
+  section#seccion-negocios div.galeria-negocios figure {
+    width: 100%;
+  }
+}
+
+/* Rango BZ: > 540px */
+@media (min-width: 540px) {
+  section#seccion-negocios div.area-activa {
+    overflow-x: hidden;
+  }
+
+  section#seccion-negocios div.galeria-negocios {
+    --gutter-galeria: 0.4rem;
+    margin: 0px calc(-1 * var(--gutter-galeria));
+    flex-flow: row wrap;
+  }
+
+  section#seccion-negocios div.galeria-negocios figure {
+    flex-basis: calc(100% / var(--numero-columnas));
+    padding: 0px var(--gutter-galeria);
+  }
+}
+
+/* Rango BD: < 960px */
+@media (min-width: 540px) and (max-width: 959px) {
+  section#seccion-negocios div.galeria-negocios {
+    --numero-columnas: 2;
+  }
+
+  section#seccion-negocios div.galeria-negocios figure:nth-of-type(9) {
+    display: none;
+  }
+}
+
+/* Rango DE: 960px - 1200px */
+@media (min-width: 960px) and (max-width: 1199px) {
+  section#seccion-negocios div.galeria-negocios {
+    --numero-columnas: 3;
+  }
+}
+
+/* Rango EZ: > 1200px */
+@media (min-width: 1200px) {
+  section#seccion-negocios div.galeria-negocios {
+    --numero-columnas: 4;
+  }
+
+  section#seccion-negocios div.galeria-negocios figure:nth-of-type(9) {
+    display: none;
+  }
+}
+
+/* 
+=============
+SECCIÓN: BLOG
+=============
 */
 
 section#seccion-blog {
   --colores-gradiente: var(--shade-secundario-2), var(--color-secundario);
 }
 
-section#seccion-blog div.columna-informacion {
-  order: 1;
-}
-
-section#seccion-blog figure.columna-fotografia {
-  order: 2;
-}
-
 section#seccion-blog div.columna-informacion a.boton-primario {
   width: var(--ancho-boton-medio);
+}
+
+/* 
+==========================
+MEDIA QUERIES SECCIÓN BLOG
+==========================
+*/
+
+/* Break Points: A) 0px, B) 540px, C) 720px, D) 960px, E) 1200px */
+
+/* Rango AD: < 960px */
+@media (max-width: 959px) {
+  section#seccion-blog figure.columna-fotografia {
+    order: 1;
+  }
+  section#seccion-blog div.columna-informacion { 
+    order: 2;
+  }
+}
+
+/* Rango DZ: > 960px */
+@media (min-width: 960px) {
+  section#seccion-blog figure.columna-fotografia {
+    order: 2;
+  }
+  section#seccion-blog div.columna-informacion { 
+    order: 1;
+  }
 }
 
 /*
@@ -230,24 +358,22 @@ section#seccion-equipo {
 
 section#seccion-equipo div.galeria-equipo {
   display: flex;
-  flex-flow: row wrap;
 }
 
 section#seccion-equipo article.miembro-equipo {
   display: flex;
-  width: calc(100% / 3);
   flex-flow: column nowrap;
   align-items: center;
 }
 
 section#seccion-equipo article.miembro-equipo figure {
-  --altura-maxima: 320px;
+  --altura-maxima: 260px;
   --gutter-fotografias: 4rem;
   width: calc(100% - var(--gutter-fotografias));
   max-width: var(--altura-maxima);
   aspect-ratio: 1 / 1;
   max-height: var(--altura-maxima);
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 section#seccion-equipo article.miembro-equipo figure img {
@@ -271,61 +397,150 @@ section#seccion-equipo article.miembro-equipo h4.nombre {
 }
 
 /* 
-==================
-SECCIÓN FORMULARIO
-==================
+============================
+MEDIA QUERIES SECCIÓN EQUIPO
+============================
 */
 
-section#seccion-formulario {
+/* Break Points: A) 0px, B) 540px, C) 720px, D) 960px, E) 1200px */
+
+/* Rango AB: < 540px */
+@media (max-width: 539px) {
+  section#seccion-equipo div.galeria-equipo {
+    flex-flow: column nowrap;
+  }
+  
+  section#seccion-equipo div.galeria-equipo article:not(:first-of-type) {
+    margin-top: 5rem;
+  }
+}
+
+/* Rango BZ: > 540px */
+@media (min-width: 540px) {
+  section#seccion-equipo div.galeria-equipo {
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+
+  section#seccion-equipo div.galeria-equipo article.miembro-equipo {
+    width: calc(100% / var(--numero-columnas));
+    padding: 0px var(--gutter-galeria);
+  }
+}
+
+/* Rango BC: 540px - 720px */
+@media (min-width: 540px) and (max-width: 719px) {
+  section#seccion-equipo div.galeria-equipo {
+    --numero-columnas: 2;
+  }
+
+  section#seccion-equipo div.galeria-equipo article:last-of-type {
+    margin-top: 3rem;
+  }
+}
+
+/* Rango DZ: > 720px */
+@media (min-width: 720px) {
+  section#seccion-equipo div.galeria-equipo {
+    --numero-columnas: 3;
+  }
+}
+
+/* 
+===========================
+SECCIÓN FORMULARIO CONTACTO
+===========================
+*/
+
+section#seccion-contacto {
   --colores-gradiente: var(--tint-neutro-1), var(--tint-neutro-2);
 }
 
-section#seccion-formulario div.columna-informacion {
+section#seccion-contacto div.columna-informacion {
   --color-texto: var(--shade-neutro-1);
 }
 
-section#seccion-formulario form div.grupo-formulario:not(:first-of-type) {
-  margin-top: 1.5rem;
-}
-
-section#seccion-formulario form div.grupo-formulario {
+section#seccion-contacto form div.grupo-formulario {
   display: flex;
-  align-items: baseline;
 }
 
-section#seccion-formulario form div.grupo-formulario label {
+section#seccion-contacto form div.grupo-formulario label {
   font-size: 1.3rem;
   font-weight: 300;
-  width: 10ch;
+  width: 12ch;
 }
 
-section#seccion-formulario form div.grupo-formulario input {
+section#seccion-contacto form div.grupo-formulario input {
   width: auto;
   flex-grow: 1;
   border-radius: 2px;
   padding: 1.25rem 1.5rem;
   border-style: none;
   font-size: 1.5rem;
-  outline: none 1px var(--shade-primario-1);
+  outline: solid 1px transparent;
+  transition: var(--transicion-general);
+  transition-property: outline-color;
 }
 
-section#seccion-formulario form div.grupo-formulario input:focus {
-  outline-style: solid;
+section#seccion-contacto form div.grupo-formulario input:focus {
+  outline-color: hsla(var(--componentes-primario), 65%);
 }
 
-section#seccion-formulario form div.grupo-formulario input::placeholder {
+section#seccion-contacto form div.grupo-formulario input::placeholder {
   font-size: 1.3rem;
 }
 
-section#seccion-formulario form.formulario-contacto footer.fila-boton {
+section#seccion-contacto form.formulario-contacto footer.fila-boton {
   margin-top: 2.5rem;
 }
 
-section#seccion-formulario form.formulario-contacto button.boton-primario {
+section#seccion-contacto form.formulario-contacto button.boton-primario {
   width: 100%;
   padding: 1.25rem 0px;
   font-size: 1.4rem;
   font-weight: normal;
-  letter-spacing: 0.03em;
   color: white;
+}
+
+/* 
+=========================================
+MEDIA QUERIES SECCIÓN FORMULARIO CONTACTO
+=========================================
+*/
+
+/* Break Points: A) 0px, B) 540px, C) 720px, D) 960px, E) 1200px */
+
+/* Rango AB: < 540px */
+@media (max-width: 539px) {
+  section#seccion-contacto header h2.titulo-seccion {
+    text-align: center;
+  }
+
+  section#seccion-contacto form div.grupo-formulario {
+    flex-flow: column nowrap;
+  }
+
+  section#seccion-contacto form div.grupo-formulario label {
+    margin-bottom: 1rem;
+  }
+
+  section#seccion-contacto form div.grupo-formulario:not(:first-of-type) {
+    margin-top: 2rem;
+  }
+}
+
+/* Rango BZ: > 540px */
+@media (min-width: 540px) {
+  section#seccion-contacto header h2.titulo-seccion {
+    text-align: left;
+  }
+
+  section#seccion-contacto form div.grupo-formulario {
+    flex-flow: row wrap;
+    align-items: baseline;
+  }
+  
+  section#seccion-contacto form div.grupo-formulario:not(:first-of-type) {
+    margin-top: 1.5rem;
+  }
 }

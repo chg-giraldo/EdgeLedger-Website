@@ -15,6 +15,7 @@
       <!-- Barra Superior: Logo, Navegación -->
       <div class="barra-superior">
         <div class="area-activa">
+          <div class="contenido-barra">
 
           <!-- Logo -->
           <h1 class="logo">
@@ -32,14 +33,17 @@
           <!-- Barra Navegación -->
           <nav class="barra-navegacion">
             <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Cases</a></li>
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">Contact</a></li>
+              <li><a href="Home.html">Home</a></li>
+              <li><a href="Home.html#seccion-features">About</a></li>
+              <li><a href="Home.html#seccion-negocios">Cases</a></li>
+            </ul>
+            <ul>
+              <li><a href="Home.html#seccion-blog">Blog</a></li>
+              <li><a href="Home.html#seccion-contacto">Contact</a></li>
             </ul>
           </nav>
 
+          </div>
         </div>
       </div>
 
@@ -48,13 +52,13 @@
         <div class="contenido-banner">
 
           <!-- Título -->
-          <h2 class="titulo-seccion">The sky is the limit</h2>
+          <h2 class="titulo-seccion">The Sky is the Limit</h2>
 
           <!-- Tagline -->
           <p class="tagline">We provide world class <strong>financial</strong> assistance</p>
 
           <!-- Botón Call to Action -->
-          <a class="boton-primario" href="#">
+          <a class="boton-primario" href="#seccion-features">
             <span>Read more</span>
             <i class="fas fa-chevron-right"></i>
           </a>
@@ -145,28 +149,29 @@
     <section id="seccion-negocios">
       <div class="area-activa">
 
-      <!-- Header: Frase Subtítulo, Título Sección, Descripción Corta -->
-      <header class="header-estandar">
-        <h3 class="subtitulo-seccion">This is what we do</h3>
-        <h2 class="titulo-seccion">Business cases</h2>
-        <div class="descripcion">
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit fugiat dolore!</p>
+        <!-- Header: Frase Subtítulo, Título Sección, Descripción Corta -->
+        <header class="header-estandar">
+          <h3 class="subtitulo-seccion">This is what we do</h3>
+          <h2 class="titulo-seccion">Business cases</h2>
+          <div class="descripcion">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit fugiat dolore!</p>
+          </div>
+        </header>
+
+        <!-- Galería Casos de Negocio -->
+        <div class="galeria-negocios">
+          <figure><img src="../Assets/Images/Cases/Cases1.jpg" alt="Case 1"></figure>
+          <figure><img src="../Assets/Images/Cases/Cases2.jpg" alt="Case 2"></figure>
+          <figure><img src="../Assets/Images/Cases/Cases3.jpg" alt="Case 3"></figure>
+          <figure><img src="../Assets/Images/Cases/Cases4.jpg" alt="Case 4"></figure>
+          <figure><img src="../Assets/Images/Cases/Cases5.jpg" alt="Case 5"></figure>
+          <figure><img src="../Assets/Images/Cases/Cases6.jpg" alt="Case 6"></figure>
+          <figure><img src="../Assets/Images/Cases/Cases7.jpg" alt="Case 7"></figure>
+          <figure><img src="../Assets/Images/Cases/Cases8.jpg" alt="Case 8"></figure>
+          <figure><img src="../Assets/Images/Cases/Cases9.jpg" alt="Case 9"></figure>
         </div>
-      </header>
 
-      <!-- Galería Casos de Negocio -->
-      <div class="galeria-negocios">
-        <figure><img src="../Assets/Images/Cases/Cases1.jpg" alt="Case 1"></figure>
-        <figure><img src="../Assets/Images/Cases/Cases2.jpg" alt="Case 2"></figure>
-        <figure><img src="../Assets/Images/Cases/Cases3.jpg" alt="Case 3"></figure>
-        <figure><img src="../Assets/Images/Cases/Cases4.jpg" alt="Case 4"></figure>
-        <figure><img src="../Assets/Images/Cases/Cases5.jpg" alt="Case 5"></figure>
-        <figure><img src="../Assets/Images/Cases/Cases6.jpg" alt="Case 6"></figure>
-        <figure><img src="../Assets/Images/Cases/Cases7.jpg" alt="Case 7"></figure>
-        <figure><img src="../Assets/Images/Cases/Cases8.jpg" alt="Case 8"></figure>
       </div>
-
-    </div>
     </section>
 
     <!-- Sección: Blog -->
@@ -255,8 +260,8 @@
       </div>
     </section>
 
-    <!-- Sección: Formulario -->
-    <section id="seccion-formulario" class="seccion-estandar">
+    <!-- Sección: Formulario Contacto -->
+    <section id="seccion-contacto" class="seccion-estandar">
       <div class="area-activa">
         <div class="contenido-seccion">
 
@@ -274,7 +279,7 @@
             </header>
 
             <!-- Formulario -->
-            <form class="formulario-contacto">
+            <form class="formulario-contacto" action="">
 
               <!-- Cuerpo Formulario: Campos -->
               <div class="cuerpo-formulario">
@@ -282,7 +287,7 @@
                   <!-- Campo 1: Nombre -->
                   <div class="grupo-formulario">
                     <label for="campo-nombre">Name</label>
-                    <input id="campo-nombre" type="text" placeholder="John Doe" name="campoNombre" autofocus />
+                    <input id="campo-nombre" type="text" placeholder="John Doe" name="campoNombre" />
                   </div>
 
                   <!-- Campo 2: Email -->
