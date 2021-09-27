@@ -1,0 +1,77 @@
+/* 
+=============
+IMPORTACIONES
+=============
+*/
+
+@import url('Base.css');
+
+/* 
+=========
+VARIABLES
+=========
+*/
+
+header#header-pagina {
+  --ruta-imagen-fondo-header: url('../Assets/Images/Home/Blog.jpg');
+}
+
+/* 
+===================
+HEADER: BANNER HERO
+===================
+*/
+
+header#header-pagina {
+  height: calc(var(--altura-barra-superior) + var(--altura-banner));
+}
+
+/* 
+==============================
+SECCIÓN: CONTENIDO PUBLICACIÓN
+==============================
+*/
+
+section#seccion-contenido-publicacion {
+  --diametro-fotografia: 260px;
+  padding: var(--padding-vertical) 0px;
+}
+
+section#seccion-contenido-publicacion header {
+  margin-bottom: 6rem;
+}
+
+section#seccion-contenido-publicacion h2.titulo-seccion {
+  padding-bottom: 0.75rem;
+  border-bottom: solid 1px var(--tint-neutro-4);
+}
+
+section#seccion-contenido-publicacion p.datos-publicacion {
+  margin-top: 1.5rem;
+}
+
+section#seccion-contenido-publicacion figure.fotografia-publicacion {
+  max-width: var(--diametro-fotografia);
+  max-height: var(--diametro-fotografia);
+  aspect-ratio: 1 / 1;
+  margin: 0px auto;
+}
+
+section#seccion-contenido-publicacion figure.fotografia-publicacion img {
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+section#seccion-contenido-publicacion div.texto-publicacion {
+  margin-top: 4rem;
+  column-count: 3;
+  column-width: var(--diametro-fotografia);
+  column-fill: balance;
+  column-gap: 2rem;
+  text-align: justify;
+}
+
+section#seccion-contenido-publicacion div.texto-publicacion p:not(:first-of-type) {
+  margin-top: 1.5rem;
+}

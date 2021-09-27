@@ -81,6 +81,7 @@ VARIABLES
 html {
 
   /* Dimensiones */
+  --altura-banner: 220px;
   --ancho-area-activa: 1400px;
   --ancho-boton-corto: 140px;
   --ancho-boton-medio: 170px;
@@ -97,15 +98,16 @@ html {
 
   /* Colores Secundarios */
   --color-secundario: hsl(200, 80%, 40%);
-  --shade-secundario-1: hsl(200, 90%, 32%);
+  --shade-secundario-1: hsl(200, 50%, 60%);
   --shade-secundario-2: hsl(200, 95%, 25%);
 
   /* Colores Neutros */
   --tint-neutro-1: hsl(0, 0%, 98%);
-  --tint-neutro-2: hsl(0, 0%, 85%);
-  --tint-neutro-3: hsl(0, 0%, 75%);
-  --shade-neutro-1: hsl(0, 0%, 20%);
-  --shade-neutro-2: hsl(0, 0%, 30%);
+  --tint-neutro-2: hsl(0, 0%, 94%);
+  --tint-neutro-3: hsl(0, 0%, 88%);
+  --tint-neutro-4: hsl(0, 0%, 80%);
+  --shade-neutro-1: hsl(0, 0%, 15%);
+  --shade-neutro-2: hsl(0, 0%, 25%);
 
   /* Tipografía */
   --fuenteCuerpo: 'Open Sans', 'Segoe UI', sans-serif;
@@ -151,7 +153,7 @@ ELEMENTOS TRANSVERSALES
   width: var(--ancho-boton-corto);
   border-radius: 5px;
   border: none;
-  padding: 1rem 0px;
+  padding: 1.2rem 0px;
   font-size: 1.3rem;
   font-weight: 300;
   text-transform: capitalize;
@@ -184,16 +186,45 @@ ELEMENTOS TRANSVERSALES
 }
 
 .boton-claro:hover {
-  background-color: var(--shade-neutro-2);
+  background-color: white;
 }
 
 .boton-oscuro {
-  background-color: var(--shade-neutro-1);
+  background-color: var(--shade-neutro-2);
   color: white;
 }
 
 .boton-oscuro:hover {
-  background-color: var(--shade-neutro-2);
+  background-color: var(--shade-neutro-1);
+}
+
+.boton-outline {
+  padding: 1rem 0px;
+  border: solid 1px currentColor;
+  background-color: transparent;
+}
+
+.boton-chevron {
+  display: inline-flex;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.boton-chevron i {
+  width: 0px;
+  margin-left: 0px;
+  opacity: 0;
+  font-size: 0.7em;
+  transform: translateY(-10%);
+  transition: var(--transicion-general);
+  transition-property: margin-left, opacity, width;
+}
+
+.boton-chevron:hover i {
+  display: inline-block;
+  margin-left: 0.65em;
+  opacity: 1;
+  width: 1em;
 }
 
 main section h3.subtitulo-seccion {
@@ -215,6 +246,16 @@ ESTRUCTURA
 ==========
 */
 
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-flow: column nowrap;
+}
+
+main {
+  flex-grow: 1;
+}
+
 div.area-activa {
   height: inherit;
   max-width: var(--ancho-area-activa);
@@ -232,9 +273,9 @@ header#header-pagina {
   display: flex;
   position: relative;
   flex-flow: column nowrap;
+  background-image: var(--ruta-imagen-fondo-header);
   background-size: cover;
-  background-position: center bottom;
-  background-attachment: fixed;
+  background-position: center;
 }
 
 header#header-pagina::before {
@@ -413,6 +454,16 @@ header#header-pagina div.banner div.contenido-banner {
   color: white;
 }
 
+header#header-pagina div.contenido-banner {
+  padding: 0px var(--padding-horizontal);
+}
+
+header#header-pagina div.banner h2.titulo-seccion {
+  margin-bottom: 1rem;
+  font-size: 4.4rem;
+  font-weight: 300;
+}
+
 /* 
 ================
 SECCIÓN ESTÁNDAR
@@ -432,15 +483,19 @@ section.seccion-estandar div.contenido-seccion {
 }
 
 section.seccion-estandar div.columna-informacion {
-  --color-texto: white;
+  color: white;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   padding: var(--padding-vertical) var(--padding-horizontal);
 }
 
+section.seccion-estandar div.informacion-seccion {
+  color: inherit;
+}
+
 section.seccion-estandar div.columna-informacion :is(p, button, h2, h3) {
-  color: var(--color-texto);
+  color: inherit;
 }
 
 section.seccion-estandar div.columna-informacion header {
@@ -451,31 +506,10 @@ section.seccion-estandar div.columna-informacion {
   font-size: 1.5rem;
 }
 
-section.seccion-estandar div.columna-informacion a.boton-primario {
-  display: flex;
+section.seccion-estandar div.columna-informacion a[class|='boton'] {
   margin-top: 2rem;
-  border: solid 1px var(--color-texto);
-  background-color: transparent;
   font-size: 1.4rem;
   font-weight: 400;
-  justify-content: center;
-  align-items: center;
-}
-
-section.seccion-estandar div.columna-informacion a.boton-primario i {
-  width: 0px;
-  margin-left: 0px;
-  opacity: 0;
-  font-size: 0.75em;
-  transition: var(--transicion-general);
-  transition-property: margin-left, opacity, width;
-}
-
-section.seccion-estandar div.columna-informacion a.boton-primario:hover i {
-  display: inline-block;
-  margin-left: 0.75rem;
-  opacity: 1;
-  width: 1em;
 }
 
 /* 
@@ -486,8 +520,8 @@ MEDIA QUERIES SECCIÓN ESTÁNDAR
 
 /* Break Points: A) 0px, B) 540px, C) 720px, D) 960px, E) 1200px */
 
-/* Rango AD: < 960px */
-@media (max-width: 959px) {
+/* Rango AC: < 720px */
+@media (max-width: 719px) {
   section.seccion-estandar div.contenido-seccion {
     flex-flow: column nowrap;
   }
@@ -499,8 +533,8 @@ MEDIA QUERIES SECCIÓN ESTÁNDAR
   }
 }
 
-/* Rango DZ: > 960px */
-@media (min-width: 960px) {
+/* Rango CZ: > 720px */
+@media (min-width: 720px) {
   section.seccion-estandar div.contenido-seccion {
     flex-flow: row nowrap;
     align-items: stretch;
@@ -530,6 +564,24 @@ section header.header-estandar {
 
 section header.header-estandar h2.titulo-seccion {
   margin-bottom: 2rem;
+}
+
+/* 
+=======================
+SECCIONES PUBLICACIONES
+=======================
+*/
+
+section.seccion-publicacion p.datos-publicacion {
+  margin-top: 1.5rem;
+}
+
+section.seccion-publicacion p.datos-publicacion i.fas {
+  margin-right: 0.5rem;
+}
+
+section.seccion-publicacion p.datos-publicacion strong {
+  font-weight: 700;
 }
 
 /* 

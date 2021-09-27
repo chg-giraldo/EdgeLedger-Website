@@ -1,0 +1,91 @@
+/* 
+=============
+IMPORTACIONES
+=============
+*/
+
+@import url('Base.css');
+
+/* 
+=========
+VARIABLES
+=========
+*/
+
+header#header-pagina {
+  --ruta-imagen-fondo-header: url('../Assets/Images/Home/Blog.jpg');
+}
+
+/* 
+===================
+HEADER: BANNER HERO
+===================
+*/
+
+header#header-pagina {
+  height: calc(var(--altura-barra-superior) + var(--altura-banner));
+}
+
+/* 
+===========================
+SECCIONES: PUBLICACIÓN BLOG
+===========================
+*/
+
+/* Publicaciones Impares: Fondo Claro */
+section.seccion-publicacion:nth-of-type(odd) {
+  --colores-gradiente: var(--tint-neutro-2), var(--tint-neutro-1);
+}
+
+section.seccion-publicacion:nth-of-type(odd) div.columna-informacion {
+  color: var(--shade-neutro-1);
+}
+
+/* Publicaciones Pares: Fondo Oscuro */
+section.seccion-publicacion:nth-of-type(even) {
+  --colores-gradiente: var(--shade-neutro-1), var(--shade-neutro-2);
+}
+
+section.seccion-publicacion:nth-of-type(even) div.columna-informacion {
+  color: white;
+}
+
+/* 
+=========================================
+MEDIA QUERIES SECCIONES: PUBLICACIÓN BLOG
+=========================================
+*/
+
+/* Break Points: A) 0px, B) 540px, C) 720px, D) 960px, E) 1200px */
+
+/* Rango AC: < 720px */
+@media (max-width: 719px) {
+  section#seccion-blog figure.columna-fotografia {
+    order: 1;
+  }
+  section#seccion-blog div.columna-informacion { 
+    order: 2;
+  }
+}
+
+/* Rango CZ: > 720px */
+@media (min-width: 720px) {
+  section.seccion-publicacion:nth-of-type(odd) figure.columna-fotografia {
+    order: 1;
+  }
+  section.seccion-publicacion:nth-of-type(odd) div.columna-informacion {
+    order: 2;
+  }
+
+  section.seccion-publicacion:nth-of-type(even) figure.columna-fotografia {
+    order: 2;
+  }
+  section.seccion-publicacion:nth-of-type(even) div.columna-informacion {
+    order: 1;
+  }
+}
+
+
+
+
+

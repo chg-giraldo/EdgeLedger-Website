@@ -13,7 +13,7 @@ VARIABLES
 */
 
 header#header-pagina {
-  --ruta-fondo-header: url('../Assets/Images/Home/Hero.jpg');
+  --ruta-imagen-fondo-header: url('../Assets/Images/Home/Hero.jpg');
 }
 
 /* 
@@ -24,17 +24,8 @@ HEADER: BANNER HERO
 
 header#header-pagina {
   height: 100vh;
-  background-image: var(--ruta-fondo-header);
-}
-
-header#header-pagina div.contenido-banner {
-  padding: 0px var(--padding-horizontal);
-}
-
-header#header-pagina div.banner h2.titulo-seccion {
-  margin-bottom: 1rem;
-  font-size: 4.4rem;
-  font-weight: 300;
+  background-position: center bottom;
+  background-attachment: fixed;
 }
 
 header#header-pagina div.banner p.tagline {
@@ -46,7 +37,7 @@ header#header-pagina div.banner p.tagline strong {
   font-weight: bolder;
 }
 
-header#header-pagina div.banner a.boton-primario {
+header#header-pagina div.banner a[class|='boton'] {
   width: var(--ancho-boton-medio);
   margin-top: 3.5rem;
   padding-top: 1.25rem;
@@ -55,10 +46,8 @@ header#header-pagina div.banner a.boton-primario {
   font-weight: 400;
 }
 
-header#header-pagina div.banner a.boton-primario i {
-  display: inline-block;
-  margin-left: 0.25rem;
-  font-size: 0.75em;
+header#header-pagina div.banner a[class|='boton']:hover i {
+  margin-left: 0.5em;
 }
 
 /* 
@@ -184,7 +173,7 @@ section#seccion-soluciones div.columna-informacion h2.titulo-seccion {
   text-transform: none;
 }
 
-section#seccion-soluciones div.columna-informacion a.boton-primario {
+section#seccion-soluciones div.columna-informacion a[class|='boton'] {
   width: var(--ancho-boton-corto);
 }
 
@@ -314,7 +303,7 @@ section#seccion-blog {
   --colores-gradiente: var(--shade-secundario-2), var(--color-secundario);
 }
 
-section#seccion-blog div.columna-informacion a.boton-primario {
+section#seccion-blog div.columna-informacion a[class|='boton'] {
   width: var(--ancho-boton-medio);
 }
 
@@ -326,8 +315,8 @@ MEDIA QUERIES SECCIÓN BLOG
 
 /* Break Points: A) 0px, B) 540px, C) 720px, D) 960px, E) 1200px */
 
-/* Rango AD: < 960px */
-@media (max-width: 959px) {
+/* Rango AC: < 720px */
+@media (max-width: 719px) {
   section#seccion-blog figure.columna-fotografia {
     order: 1;
   }
@@ -336,8 +325,8 @@ MEDIA QUERIES SECCIÓN BLOG
   }
 }
 
-/* Rango DZ: > 960px */
-@media (min-width: 960px) {
+/* Rango CZ: > 720px */
+@media (min-width: 720px) {
   section#seccion-blog figure.columna-fotografia {
     order: 2;
   }
@@ -457,7 +446,7 @@ section#seccion-contacto {
 }
 
 section#seccion-contacto div.columna-informacion {
-  --color-texto: var(--shade-neutro-1);
+  color: var(--shade-neutro-1);
 }
 
 section#seccion-contacto form div.grupo-formulario {
@@ -494,7 +483,7 @@ section#seccion-contacto form.formulario-contacto footer.fila-boton {
   margin-top: 2.5rem;
 }
 
-section#seccion-contacto form.formulario-contacto button.boton-primario {
+section#seccion-contacto form.formulario-contacto button[class|='boton'] {
   width: 100%;
   padding: 1.25rem 0px;
   font-size: 1.4rem;
