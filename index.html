@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>EdgeLedger | Welcome</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width = device-width, initial-scale = 1" />
+  <meta http-equiv="refresh" content="1; url = 'Html/Home.html'" />
+  <link rel="icon" type="image/svg+xml" href="Assets/Images/Icon/Icon-EdgeLedger.svg" />
+  <style>
+    
+    /* Reset */
+    body {
+      margin: 0px;
+    }
+    h1 {
+      margin: 0px;
+    }
+    figure {
+      margin: 0px;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    img {
+      display: block;
+      width: 100%;
+      height: inherit;
+    }
+
+    /* Variables */
+		html {
+      --altura-logo: 45px;
+      --shade-primario-1: hsl(130, 70%, 30%);
+      --shade-neutro-1: hsl(0, 0%, 15%);
+		}
+
+    /* Estructura */
+		main {
+      display: flex;
+			min-height: 100vh;
+			background-color: var(--shade-neutro-1);
+      align-items: center;
+      justify-content: center;
+		}
+
+    /* Elementos */
+    main h1 {
+      display: none;
+    }
+		main a.enlace-home {
+			display: inline-block;
+		}
+		main figure.logo {
+      width: auto;
+      height: var(--altura-logo);
+		}
+  </style>
+</head>
+
+<body>
+  <main>
+    
+    <!-- Título -->
+    <h1>EdgeLedger</h1>
+
+    <!-- Enlace -->
+    <a class="enlace-home" href="Html/Home.html">
+      <figure class="logo">
+        <img src="Assets/Images/Logo/Logo.svg" alt="EdgeLedger Logo" />
+      </figure>
+    </a>
+
+  </main>
+</body>
+</html>
