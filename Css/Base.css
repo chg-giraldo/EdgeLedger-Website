@@ -302,10 +302,17 @@ header#header-pagina div.barra-superior {
   height: var(--altura-barra-superior);
   top: 0px;
   z-index: 2;
-  background-color: hsla(0, 0%, 20%, 90%);
   color: var(--tint-neutro-2);
   transition: var(--transicion-general);
   transition-property: background-color;
+}
+
+header#header-pagina div.barra-superior.posicion-inicial {
+  background-color: transparent;
+}
+
+header#header-pagina div.barra-superior.posicion-desplazada {
+  background-color: hsla(0, 0%, 20%, 90%);
 }
 
 header#header-pagina div.barra-superior div.contenido-barra {
